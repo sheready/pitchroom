@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to Pitch room </title>
+        {% endif %}
+    </head>
+    <body>
+        {% block content %}
+        
+        {% endblock%}
+
+
+    </body>
+</html>
