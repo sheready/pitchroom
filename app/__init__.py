@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_simplemde import SimpleMDE
 from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
@@ -28,6 +29,8 @@ def create_app(config_name):
 
     DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
     engine = create_engine(DB_URI)
+    db = scoped_session(sessionmaker(bind=engine))
+
     
     # Initializing flask extensions
     bootstrap.init_app(app)
