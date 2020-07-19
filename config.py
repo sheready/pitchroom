@@ -33,4 +33,3 @@ config_options = {
 'production':ProdConfig
 }
 
-from app import config
