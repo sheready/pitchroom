@@ -1,9 +1,9 @@
 import os
-class Config:
+class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SECRET_KEY = '\xbc&\x9c\x1d#9\xc9\xb8Fh\x17\x00u\xefX\xbb\x12\xd4i\xb3\xb2\xfd\xdf\xe8'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
@@ -32,3 +32,5 @@ config_options = {
 'development':DevConfig,
 'production':ProdConfig
 }
+
+from app import config

@@ -4,6 +4,7 @@ from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_simplemde import SimpleMDE
+from sqlalchemy import create_engine
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
@@ -25,6 +26,9 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
+    DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
+    engine = create_engine(DB_URI)
+    
     # Initializing flask extensions
     bootstrap.init_app(app)
     db.init_app(app)
