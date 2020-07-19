@@ -27,9 +27,8 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
-    DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
-    engine = create_engine(DB_URI)
-    db = scoped_session(sessionmaker(bind=engine))
+    
+    
 
     
     # Initializing flask extensions
