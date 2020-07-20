@@ -1,10 +1,10 @@
 # Title:
 
-PITCH
+PITCHROOM
 
 ## Project Description:
 
-This is an application that allows users to submit a one minute pitch and users can upvote or downvote and also leave comments.
+This is an application that allows users to submit a one minute pitch and users can upvote or downvote and also leave comments.live link https://git.heroku.com/pitchroom.git
 
 ## Behaviour Driven development:
 
