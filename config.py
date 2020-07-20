@@ -1,6 +1,6 @@
 import os
 class Config:
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql+psycopg2://moringa:Access@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql+psycopg2://moringa:Access@localhost/pitches'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SECRET_KEY = '\xbc&\x9c\x1d#9\xc9\xb8Fh\x17\x00u\xefX\xbb\x12\xd4i\xb3\xb2\xfd\xdf\xe8'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
@@ -15,7 +15,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL") or 'postgresql+psycopg2://moringa:Access@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL") or 'postgresql+psycopg2://moringa:Access@localhost/pitches'
 
 
 class DevConfig(Config):
@@ -25,7 +25,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    DATABASE_URL = 'postgresql+psycopg2://moringa:Access@localhost/pitch'
+    DATABASE_URL = 'postgresql+psycopg2://moringa:Access@localhost/pitches'
     DEBUG = True 
 
 config_options = {
